@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily Reminders</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">Daily Reminders</p>
+        <h1>Notes</h1>
+        <p class="subtitle">Capture what you need to do. Notes stay on this device.</p>
+      </header>
+
+      <form id="note-form" class="note-form">
+        <label for="note-input">What do you need to do?</label>
+        <textarea
+          id="note-input"
+          name="note"
+          rows="4"
+          maxlength="500"
+          placeholder="Call the dentist, pick up groceries..."
+          required
+        ></textarea>
+        <button type="submit">Save</button>
+      </form>
+
+      <section class="notes-section" aria-live="polite">
+        <h2>Saved notes</h2>
+        <p id="empty-state" class="empty-state">No notes yet. Add one above.</p>
+        <ul id="notes-list" class="notes-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --card: #fffdf8;
+  --ink: #1f2430;
+  --muted: #5d6573;
+  --line: #ddd6c8;
+  --accent: #1f6f5b;
+  --accent-hover: #175746;
+  --danger: #9b3d3d;
+  --danger-hover: #7c2f2f;
+  --shadow: 0 10px 30px rgba(31, 36, 48, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top, #fff, transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.app {
+  width: min(640px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.subtitle,
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
+.note-form,
+.notes-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.note-form label,
+.notes-section h2 {
+  display: block;
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 110px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+}
+
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.note-form button {
+  width: 100%;
+  margin-top: 12px;
+  background: var(--accent);
+  color: white;
+}
+
+.note-form button:hover {
+  background: var(--accent-hover);
+}
+
+.notes-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.empty-state.hidden {
+  display: none;
+}
+
+.note-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.note-text {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.note-meta {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.delete-button {
+  background: transparent;
+  color: var(--danger);
+  padding: 8px 12px;
+}
+
+.delete-button:hover {
+  background: #f8ecec;
+  color: var(--danger-hover);
+}
+
+@media (min-width: 640px) {
+  .note-form button {
+    width: auto;
+  }
+}
